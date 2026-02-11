@@ -1,0 +1,8 @@
+---
+applications:
+- name: sample-server
+  buildpacks :
+  - nodejs_buildpack
+  routes:
+  - route: sample-server.cfapps.us10-001.hana.ondemand.com  # External Call
+  - route: sample-server-internal.apps.internal #Internal Call
