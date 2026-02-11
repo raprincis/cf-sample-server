@@ -6,3 +6,6 @@ applications:
   routes:
   - route: sample-server.cfapps.us10-001.hana.ondemand.com  # External Call
   - route: sample-server-internal.apps.internal #Internal Call
+  services:
+  - name: xsuaa-sample-server
+    binding_name: xsuaa-service-binding

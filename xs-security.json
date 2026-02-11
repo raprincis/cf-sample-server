@@ -1,0 +1,42 @@
+{
+    "xsappname": "sample-server",
+    "description": "Sample Server Security Description",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Read",
+            "description": "Scope for Read"
+        },
+        {
+            "name": "$XSAPPNAME.Create",
+            "description": "Scope for Create Something"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "ViewerPublic",
+            "description": "Role for Viewer",
+            "scope-references": [
+                "$XSAPPNAME.Read"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "CreatorPublic",
+            "description": "Role for Viewer",
+            "scope-references": [
+                "$XSAPPNAME.Create"
+            ],
+            "attribute-references": []
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "SampleServerAdministrator",
+            "description": "Sample Server Administrator",
+            "role-template-references": [
+                "$XSAPPNAME.ViewerPublic",
+                "$XSAPPNAME.CreatorPublic"
+            ]
+        }
+    ]
+}
